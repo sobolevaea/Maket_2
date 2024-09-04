@@ -289,7 +289,7 @@ a {
 	-webkit-appearance: none;
 	vertical-align: middle;
 	cursor: pointer;
-	margin: 21px 7px 0 1px;
+	margin: 19px 9px 2px 0px;
 }
 
 .product__sz::before {
@@ -300,8 +300,15 @@ a {
 	content: 's';
 	text-transform: uppercase;
 	font-weight: 500;
+	font-size: 18px;
 }
-
+.product__sz:nth-last-of-type(4),
+.product__sz:nth-last-of-type(3),
+.product__sz:nth-last-of-type(2)
+ {
+	margin-right: 8px;
+}
+ 
 form>.product__sz:nth-child(6)::before {
 	content: 'xs';
 }
@@ -425,24 +432,6 @@ form>.product__sz:nth-child(10)::before {
 	padding: 0 0 49px 2px;
 }
 
-/* 
-.footer:after,
-.footer:before {
-	position: absolute;
-	content: '';
-	width: 1000%;
-	height: 100%;
-	background: var(--dark-blue);
-}
-
-.footer::after {
-	left: 100%;
-}
-
-.footer::before {
-	right: 100%;
-} */
-
 .footer>.nav {
 	flex-wrap: wrap;
 	max-width: 478px;
@@ -526,7 +515,7 @@ form>.product__sz:nth-child(10)::before {
 
 /* footer end */
 
-@media (min-width:716px) and (max-width:1365px) {
+@media (min-width:700px) and (max-width:1200px) {
 	body {
 		gap: 30px;
 	}
@@ -537,7 +526,7 @@ form>.product__sz:nth-child(10)::before {
 	}
 
 	.header {
-		max-width: 768px;
+		/* max-width: 768px; */
 		padding-top: 23px;
 	}
 
@@ -583,7 +572,21 @@ form>.product__sz:nth-child(10)::before {
 		font-weight: 400;
 		font-size: 14px;
 	}
-
+	.product__sz {
+		margin: 19px 9px 2px 0px;
+	}
+	.product__sz:nth-last-of-type(4) {
+    margin-right: 8px;
+	}
+	.product__sz:nth-last-of-type(3) {
+    margin-right: 9px;
+	}
+	.product__sz:nth-last-of-type(2) {
+    margin-right: 7px;
+	}
+	.product__sz::before {
+		font-size: 18px;
+	}
 	.arrow {
 		display: none;
 	}
@@ -619,12 +622,15 @@ form>.product__sz:nth-child(10)::before {
 	}
 
 	.similar__title {
+		width: 100%;
+    text-align: left;
 		font-size: 28px;
 		padding-left: 6px;
 	}
 
 	.section-similar {
 		gap: 55px;
+		align-items: center;
 		padding: 0px 0px 51px 0px;
 	}
 
@@ -647,6 +653,7 @@ form>.product__sz:nth-child(10)::before {
 
 	.similar-content {
 		flex-wrap: wrap;
+		max-width: 678px;
 	}
 
 	.similar__item {
@@ -679,13 +686,12 @@ form>.product__sz:nth-child(10)::before {
 	}
 
 	.socials__link:nth-of-type(2) {
-		background-size: 16px 16px;
-		margin: 0 0 0 8px;
+		background-size: 18px 16px;
+		margin: 0 0 0 6px;
 	}
 
 	.socials__link:nth-of-type(3) {
-		background-size: 17px 17px;
-		margin: 0 0 0 1px;
+		background-size: 18px 17px;
 	}
 
 	.socials__link:nth-of-type(4) {
@@ -695,22 +701,23 @@ form>.product__sz:nth-child(10)::before {
 
 	.footer {
 		gap: 39px;
+		padding-bottom: 48px;
 	}
 
 	.socials {
-		gap: 32px;
+		gap: 33px;
 		padding: 0px 0 0 10px;
 	}
 }
 
-@media (max-width:716px) {
+@media (max-width:699px) {
 	.section {
 		min-width: 320px;
 		padding: 0px 0px;
 	}
 
 	.header {
-		max-width: 320px;
+		/* min-width: 320px; */
 		padding: 22px 12px 0 15px;
 	}
 
@@ -840,12 +847,17 @@ form>.product__sz:nth-child(10)::before {
 		font-size: 14px;
 	}
 
-	.product__sz:nth-last-of-type(2),
+
 	.product__sz:nth-last-of-type(3),
 	.product__sz:nth-last-of-type(4) {
 		margin-right: 10px;
 	}
-
+	.product__sz:nth-last-of-type(2) {
+		margin-right: 11px;
+	}
+	.product__sz::before {
+		font-size: 14px;
+	}
 	.product__about>.form>.price {
 		margin-top: 24px;
 	}
@@ -863,7 +875,7 @@ form>.product__sz:nth-child(10)::before {
 		gap: 36px;
 		position: unset;
 		align-items: center;
-		padding: 0px 15px 28px 15px;
+		padding: 0px 15px 24px 15px;
 	}
 
 	.similar__title {
@@ -887,7 +899,7 @@ form>.product__sz:nth-child(10)::before {
 	.similar-content {
 		flex-wrap: wrap;
 		gap: 28px;
-		/* max-width: 290px; */
+		max-width: 290px;
 	}
 
 	.similar__item {
@@ -914,6 +926,7 @@ form>.product__sz:nth-child(10)::before {
 		text-align: center;
 		font-weight: 500;
 		font-size: 16px;
+		padding-bottom: 4px;
 	}
 
 	.similar__link::after {
@@ -931,7 +944,7 @@ form>.product__sz:nth-child(10)::before {
 	.footer {
 		align-items: baseline;
 		gap: 38px;
-		padding: 0 0 49px 15px;
+		padding: 0 0 52px 15px;
 	}
 
 	.footer>.nav {
@@ -989,5 +1002,9 @@ form>.product__sz:nth-child(10)::before {
 
 	.socials__link:nth-of-type(4) {
 		margin: 1px 0 0 1px;
+	}
+
+	.socials__link:nth-of-type(3) {
+		background-size: 22px 21px;
 	}
 }
