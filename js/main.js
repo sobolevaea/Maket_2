@@ -6,33 +6,24 @@ const slidesCount = sliderGalery.querySelectorAll("img").length;
 
 let activeSlideIndex = 0;
 
-function changeSlide (direction) {
+function changeSlide(direction) {
 	if (direction === "left") {
-		activeSlideIndex--;
-		if (activeSlideIndex < 0) {
-			activeSlideIndex = slidesCount - 1;
-		}
-		clearSlide();
+		activeSlideIndex = (activeSlideIndex - 1 + slidesCount) % slidesCount;
+	} else if (direction === "right") {
+		activeSlideIndex = (activeSlideIndex + 1) % slidesCount;
 	}
-	if (direction === "right") {
-		activeSlideIndex++;
-		if (activeSlideIndex === slidesCount) {
-			activeSlideIndex = 0;
-		}
-		clearSlide();
-	}
+	clearSlide();
 }
-function clickSlide (index) {
+function clickSlide(index) {
 	activeSlideIndex = index;
 	clearSlide();
 }
-function eventHandlers () {
+function eventHandlers() {
 	if (slidesCount === 1) {
 		leftBtn.style.display = 'none';
 		rightBtn.style.display = 'none';
 		slides.item(0).classList.add('full');
-	}
-	if (slidesCount > 1) {
+	} else if (slidesCount > 1) {
 		leftBtn.addEventListener('click', () => changeSlide("left"));
 		rightBtn.addEventListener('click', () => changeSlide('right'));
 		slides.forEach((slide, index) => {
@@ -40,7 +31,7 @@ function eventHandlers () {
 		});
 	}
 }
-function clearSlide () {
+function clearSlide() {
 	sliderGalery.querySelector(".big").classList.remove("big");
 	slides[activeSlideIndex].classList.add('big');
 }
