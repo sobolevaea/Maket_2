@@ -7,11 +7,7 @@ const slidesCount = sliderGalery.querySelectorAll("img").length;
 let activeSlideIndex = 0;
 
 function changeSlide(direction) {
-	if (direction === "left") {
-		activeSlideIndex = (activeSlideIndex - 1 + slidesCount) % slidesCount;
-	} else if (direction === "right") {
-		activeSlideIndex = (activeSlideIndex + 1) % slidesCount;
-	}
+	activeSlideIndex = (activeSlideIndex + (direction === "left" ? -1 : 1) + slidesCount) % slidesCount;
 	clearSlide();
 }
 function clickSlide(index) {
