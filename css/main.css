@@ -156,7 +156,7 @@ a {
 	justify-content: space-between;
 	gap: 20px;
 	height: 100%;
-	min-width: 400px;
+	flex-basis: 400px;
 	width: 100%;
 	
 }
@@ -800,6 +800,7 @@ form>.product__sz:nth-child(10)::before {
 	}
 
 	.product__slider {
+		width: 100%;
 		gap: 14px;
 		padding: 0 13px;
 	}
@@ -812,6 +813,7 @@ form>.product__sz:nth-child(10)::before {
 	}
 
 	.product__galery {
+		justify-content: center;
 		gap: 0px;
 		width: 244px;
 		height: 310px;
